@@ -12,8 +12,11 @@ while choice != "quit":
     choice = input("Do you want to open a pack? ")
 
     if choice == "yes":
-        money = money - packcost
-        randomnumber = random.randint(0, len(pokemons)-1)
-        pokemon = pokemons[randomnumber]
-        print("You have got! ", pokemon)
-        print("You have ", money, "remaining.")
+        if money > 4: 
+            money = money - packcost
+            randomnumber = random.randint(0, len(pokemons)-1)
+            pokemon = pokemons[randomnumber]
+            print("You have got! ", pokemon)
+            print("You have ", money, "remaining.")
+        else:
+            print("You dont have enough money remaining.")
